@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-5 col-5">
+        <div class="contact">
+          <div class="row text-center" style="padding:20px;">
+            <div class="col-md-5 col-sm-5 col-5">
+              <input id="search" type="text" class="form-control" placeholder="Search...">
+            </div>
+          </div>
+          <div class="row text-center" style="margin:0px auto;width:100px;">
+              <div class="col-md-5 col-sm-5 col-5">
+               <h5>Messages</h5>
+              </div>
+          </div><br>
+          <hr>
+       
+          <div *ngFor="let AllMessage of AllMessages">
+            <div class="row" style="padding-left:25px">
+    
+              <div class="col-md-2 col-sm-4 col-4">
+                <img src="assets/img/avatar5.png" class="img-circle" width="50">
+              </div>
+              <a routerLink="/landingpage/createmessage/{{AllMessage._id}}">
+              <div class="col-md-6 col-sm-4 col-4 text-center" >
+                <span>{{AllMessage.firstName}} {{AllMessage.lastName}}</span><br>
+                <span>{{AllMessage.mobileNumber}}</span><BR>
+              </div>
+              </a>
+    
+              <div class="col-md-4 col-sm-4 col-4">
+                <span data-toggle="tooltip" title="{{AllMessage.message.length}} New Messages" class="badge bg-red" style="padding:5px;">{{AllMessage.message.length}}</span>           
+    
+              </div>
+              </div><br>
+              <hr>
+            </div>
+         
+  
+  
+        </div>
+      </div>
+  
+      <div class="col-md-5 col-sm-5 col-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
